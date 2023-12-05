@@ -1,4 +1,15 @@
 describe("Login", () => {
+
+	it("[Success L-1] valid credentials",()=>{
+		cy.login();
+		cy.on("url:changed", () => {
+			cy.url().should("eq", `${Cypress.config().baseUrl}/`);
+		});
+
+	});
+	
+
+
 	it("[Error L-2] invalid credentials", () => {
 		cy.visit("/login", {
 			failOnStatusCode: false,
