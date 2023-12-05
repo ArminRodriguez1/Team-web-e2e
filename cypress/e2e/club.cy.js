@@ -16,7 +16,7 @@ describe("Club", () => {
     	cy.url().should('include', '/login');
 	});
 
-/*	it("[SUCCESS C-3] add member",()=>{
+	it("[SUCCESS C-3] add member",()=>{
 		cy.login().then((token) => {
 			cy.getClubs(token).then((clubes) => {
 				cy.visit("/", {
@@ -27,12 +27,13 @@ describe("Club", () => {
 			cy.get(`div[for="add-member"]`).click({ multiple: true });
 				cy.get(`input[name="member-name"]`).type("Armin");
 				cy.get(`input[name="member-lastname"]`).type("Mayorga");
-				cy.get(`input[name="member-email"]`).type("aehter@gmail.com");
-				cy.get(`button[class="q-btn q-btn-item non-selectable no-outline q-btn--flat q-btn--rectangle q-btn--actionable q-focusable q-hoverable text-primary"]`).click();
-				cy.get('table td').eq(2).should('contain.text',"Armin Mayorga");
+				cy.get(`input[name="member-email"]`).type("aehter64@gmail.com");
+				cy.get(`button[class="q-btn q-btn-item non-selectable no-outline q-btn--flat q-btn--rectangle q-btn--actionable q-focusable q-hoverable text-primary"]`).click({ multiple: true });
+				cy.get('table[class="q-table"]');
+				cy.get('td[class="text-left"]').should('contain.text',"Armin Mayorga");
 		});
 	});
-*/
+
 	it("[INVALID C-4] email invalid",()=>{
 		cy.login().then((token) => {
 			cy.getClubs(token).then((clubes) => {
